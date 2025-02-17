@@ -84,7 +84,6 @@ struct TimeSliderView: View {
     
 }
 
-
 #Preview {
     TimeSliderView()
 }

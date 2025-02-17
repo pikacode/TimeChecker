@@ -34,6 +34,7 @@ struct TimeLabel: View {
                     .border(getBorderColor(), width: 1.5)
                     .background(Color.white)
                     .cornerRadius(4)
+                    .frame(height: stepHeight)
                 Spacer()
             }
             .offset(y: dragOffset)
