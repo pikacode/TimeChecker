@@ -17,7 +17,7 @@ struct TimeLabel: View {
     
     var inRange: Bool = true
 
-    @State private var dragOffset: CGFloat = 0//-30 * 4 // 初始位置（默认中间位置）
+    @State private var dragOffset: CGFloat = 0 // 初期位置（デフォルトは中央位置）
 
     var body: some View {
         VStack {
@@ -25,7 +25,7 @@ struct TimeLabel: View {
             HStack(spacing: 0) {
                 Rectangle()
                     .fill(getBackgroundColor())
-                    .frame(width: 100, height: 4) // 横向标签
+                    .frame(width: 100, height: 4)
                 
                 Text("\(kind.text): \(hour)時")
                     .font(.system(size: 16))
@@ -50,7 +50,7 @@ struct TimeLabel: View {
                         }
                     }
                     .onEnded { _ in
-                        // 结束时自动对齐最近刻度
+                        // ドラッグ終了時に最近の刻みに自動調整
                         dragOffset = CGFloat(hour - minHour) * stepHeight
                     }
             )
